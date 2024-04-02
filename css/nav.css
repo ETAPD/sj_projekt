@@ -18,6 +18,10 @@ nav {
     
 }
 
+.nav-item.active .nav-link {
+    color: #ff0000; 
+}
+
 nav li a:hover {
     color: #FF4E00 !important;
     text-decoration: underline;

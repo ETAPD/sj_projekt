@@ -11,17 +11,19 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-start ms-2" id="navbarNav">
+            <?php $currentFile = basename($_SERVER['PHP_SELF']); ?>
+
+            <div class="collapse navbar-collapse middle justify-content-start" id="navbarNav">
                 <ul class="navbar-nav ">
-                    <li class="nav-item active">
+                    <li class="nav-item <?php if($currentFile == 'index.php') { echo 'active'; } ?>">
                         <a class="nav-link ps-3" href="index.php">Domov</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?php if($currentFile == 'contact.php') { echo 'active'; } ?>">
                         <a class="nav-link ps-3" href="contact.php">Kontakt</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?php if($currentFile == 'about.php') { echo 'active'; } ?>">
                         <a class="nav-link ps-3 " href="about.php">O-nás</a>
-                    </li>                   
+                    </li>
                 </ul>
             </div>
             <div class="justify-content-end me-3">
