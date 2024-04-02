@@ -1,19 +1,20 @@
+/* Nav bar */
 
 nav {
-    margin-top: 1%;
     
+    font-family: "Barlow Condensed", sans-serif;
+    margin-top: 1%;
     background-color: rgba(18, 16, 16, 0.26) !important;
     backdrop-filter: blur(10px) !important;
     top: 0;
     z-index: 1000;
     box-sizing: border-box;
-    
-    -webkit-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
-    box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
+    box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
     border-radius: 25px;
     backdrop-filter: blur(10px) !important;
-    
+    font-weight: bold;
     
 }
 
@@ -25,8 +26,37 @@ nav li a:hover {
 nav li a{
     text-decoration: none;
     font-size: 20px !important;
+    font-weight: bold;
 }
 
+nav button{
+    color: black !important;
+    border-color: white !important;
+    font-weight: bold;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+nav button:hover{
+    
+    background-color: #FF4E00 !important; 
+    
+}
+
+header img{
+    width: 100% !important;
+    
+    
+    
+}
 .middle{
     justify-content: center;
 }
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}
+
+
