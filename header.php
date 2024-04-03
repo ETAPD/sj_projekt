@@ -26,7 +26,11 @@
                     </li>
                 </ul>
             </div>
+            <div class="me-2">
+                <a href="login.php" class="btn btn-primary">Prihlásiť sa</a>
+            </div>
             <div class="justify-content-end me-3">
+                
                 <form class="d-flex ">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
