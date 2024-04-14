@@ -39,20 +39,25 @@
                     die();
                 }
 
-                create_user
+                create_user($pdo, $username, $email, $pwd_1);
+                header("Location: ../signup.php?signup=success");
+
+                $pdo = null;
+                $stmt = null;
+                die();
 
             } catch (PDOException $error) {
                 echo "Dotaz zlyhal: " . $error->getMessage();
             }
 
-        } else {
-            header("Location: ../signup.php");
-            echo "Heslá sa nezhodujú";
-            die();
-        }
+        //} else {
+           //header("Location: ../signup.php");
+            //echo "Heslá sa nezhodujú";
+            //die();
+        //}
 
-    //} else {
+    } else {
 
         //header("Location: ../singup.php");
        // die();
-//}
+}

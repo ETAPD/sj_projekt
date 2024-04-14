@@ -17,6 +17,7 @@
         } elseif (isset($_GET["signup"]) && $_GET["signup"] === "success") {
             
             echo '<p class="form-success">' . $_SESSION["signup_success"] . "</p>";
+            echo "nigger";
             unset($_SESSION["signup_success"]);
         }
     }

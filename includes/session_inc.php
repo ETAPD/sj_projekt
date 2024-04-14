@@ -7,7 +7,7 @@
         "domain" => "localhost",
         "path" => "/",
         "secure" => true,
-        "httponly" => true
+        "httponly" => true,
     ]);
 
     session_start();
