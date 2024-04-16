@@ -1,0 +1,68 @@
+
+main {
+    margin-top: 10%; /* Adjust the value as needed */
+}
+.container-signup{
+    box-sizing: border-box;
+    width: 80%;
+    -webkit-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
+    -moz-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
+    box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
+    border-radius: 25px;
+    padding: 15px;
+    transition: transform 0.5s ease; 
+    margin: auto;
+}
+.input-icon {
+    position: relative;
+    
+}
+
+.input-icon i {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+
+}
+
+.input-icon .form-control {
+    padding-left: 30px;
+}
+main form {
+    margin-top: 5%; 
+    display: table;
+    width: 100%;
+}
+main img {
+    
+    width: 50%; 
+    height: auto; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    object-fit: contain;
+}
+main form input{
+    border-radius: 30px !important;
+    border: none !important;
+    padding: 12px 50px !important;
+    width: 75% !important;
+    background-color:#D3D3D3 !important; 
+    margin-top: 3%;
+}
+main form button{
+    border-radius: 30px !important;
+    background-color: #FF4E00 !important;
+    border: none !important;
+    color: white !important;    
+    padding: 12px 50px !important;
+    width: 75% !important;
+}
+main form button:hover{
+    background-color: #F09440 !important;
+}
+main form button, .input-icon {
+    display: block;
+    margin: auto;
+    /* rest of your styles */
+}
