@@ -1,29 +1,15 @@
 <?php
 
 declare(strict_types=1);
+require_once 'db_oop.php';
 
-$signup = new Signup();
-$signup->handler();
-class Signup {
+
+
+class Signup extends Database{
 
     private $errors_signup;
-    private $pdo; 
     
-
-    public function __construct() {
-        
-        try {
     
-            $this->pdo = new PDO('mysql:host=localhost;dbname=database', "root", "root");
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-        } catch (PDOException $error) {
-    
-            echo "Pripojenie zlyhalo: " . $error->getMessage();
-    
-        }
-    }
-
     public function handler() {
         
         
@@ -38,44 +24,50 @@ class Signup {
                     
                 $errors = [];
                 if ($this->is_input_empty($username, $email, $pwd_1, $pwd_2)) {
-                    $errors["empty_input"] = "Fill in all fields!";
+                    $errors["empty_input"] = True;
                 }
                 if ($this->is_email_invalid($email)) {
-                    $errors["invalid_email"] = "Invalid email!";
-                }
+                    $errors["invalid_email"] = True;
+                } elseif ($this->is_email_taken($email)) {      
+                    $errors["email_used"] = True;
+                    }
                 if ($this->is_username_taken($username)) {    
-                    $errors["username_taken"] = "Username already taken!";            
-                }
-                if ($this->is_email_taken($email)) {      
-                    $errors["email_used"] = "Email already used!";            
+                    $errors["username_taken"] = True;            
                 }
                 
                 if ($pwd_1 === $pwd_2){
                     $pwd = $pwd_1;
                 } else{
                     echo "Heslá sa nezhodujú";
+                    $this->disconnect();
                     die();
+                    
                 }
 
-                if ($errors) {
-
-                    $this->errors_signup = $errors;
-                    
-                    
-                    header("Location: ../signup.php");
-                    die();
-                }
-
-                $this->create_user($username, $email, $pwd);
-                header("Location: ../signup.php?signup=success");
                 
 
-                $this->pdo = null;
-                $stmt = null;
-                die();
+                if ($errors) {
+                    $this->errors_signup = $errors;
+                    $this->invalid_input();
+                    header("Location: signup.php");
+                    echo "Nastala chyba";
+                    $this->disconnect();
+                    die();
+                    
+                    
+                }else{
 
+                    $this->create_user($username, $email, $pwd);
+                    header("Location: signup.php?signup=success");
+                    $this->disconnect();
+                    $stmt = null;
+                    die();
+
+                }
+
+                
             } catch (PDOException $error) {
-                echo "Dotaz zlyhal: " . $error->getMessage();
+                die( "Dotaz zlyhal: " . $error->getMessage());
             }  
         } else {
 
@@ -83,25 +75,6 @@ class Signup {
             die();
         }
         
-    }
-
-    private function check_signup() {
-        if (isset( $this->errors_signup)) {
-
-            $errors =  $this->errors_signup;
-            echo "<br>";
-            
-            foreach ($errors as $error) {
-                echo '<p class="form-error">' . $error . "</p>";
-                
-            }
-
-        } elseif (isset($_GET["signup"]) && $_GET["signup"] === "success") {
-            
-            echo '<p class="form-success">' . $_SESSION["signup_success"] . "</p>";
-            echo "ahoj";
-            
-        }
     }
 
     private function is_input_empty(string $username, string $email, string $pwd_1, string $pwd_2) {
@@ -134,7 +107,7 @@ class Signup {
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result === [];
+        return $result;
     }
     
     private function is_email_taken(string $email) {
@@ -145,7 +118,7 @@ class Signup {
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result === [];
+        return $result;
     }
     
     private function create_user(string $username, string $email, string $pwd) {
@@ -164,6 +137,32 @@ class Signup {
         $stmt->execute();  
     }
 
-    
+    private function invalid_input() {
+
+        $errors = $this->errors_signup;
+        $error = [];
+        
+        if ($errors["empty_input"] === True) {
+            $error['emptyError'] = "Prázdne pole";
+        }
+        if ($errors["invalid_email"] === True) {
+            $error['emailError'] = "Neplatný email";
+        }
+        if ($errors["username_taken"] === True) {    
+            $error['usernameError'] = "Používateľské meno je už obsadené";
+        }
+        if ($errors["email_used"] === True) {      
+            $error['emailError'] = "Email je už použitý";
+        }
+        $_SESSION['errors_signup'] = $error;
+
+        
+    }
+
+    private function signup_input() {
+
+
+    }
 
 }
+

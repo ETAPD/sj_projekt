@@ -31,7 +31,8 @@
                             <div class="input-icon">
                                 <i class="fas fa-user"></i>
                                 <input type="text" name="username"class="form-control" id="name" placeholder="Použivateľské meno">
-                                <span class=""><span class=""><?php if (isset($errors['usernameError'])) echo $errors['usernameError']; ?></span>
+                                <span class=""><span class=""><?php if (isset($errors['usernameError'])) echo $errors['usernameError'];
+                                                                    if (isset($errors['emptyError'])) echo $errors['emptyError']; ?></span>
                             </div>
                         </div>
                         <div class="mb-3">

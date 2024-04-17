@@ -4,7 +4,7 @@ main {
 }
 .container-signup{
     box-sizing: border-box;
-    width: 80%;
+    width: 60%;
     -webkit-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
     -moz-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
     box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.285);
@@ -34,13 +34,11 @@ main form {
     width: 100%;
 }
 main img {
-    
     width: 50%; 
     height: auto; 
     display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
-    object-fit: contain;
+    margin: auto; 
+    margin-top: 10%; /*treba zmenit*/  
 }
 main form input{
     border-radius: 30px !important;
