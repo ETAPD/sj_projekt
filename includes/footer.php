@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="css/footer.css">
+<!--<link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 <footer class="container-fluid bg-dark text-white  ">
         <div class="row d-flex justify-content-center">
@@ -8,7 +8,7 @@
                 <h4>O Nás:</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quam nemo optio velit! Molestiae temporibus atque sed, voluptates culpa possimus dolorum praesentium accusamus. Quae, eveniet molestiae dolorem atque eum ut.</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ea reprehenderit totam non dignissimos facere omnis iste! Ipsum omnis et quae odit cum reprehenderit, placeat temporibus debitis? Architecto, doloremque amet.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, eos. Similique error quaerat accusantium iusto maiores magnam esse debitis, molestiae non ex quasi ducimus nam accusamus deleniti voluptatibus laboriosam quia!</p>
+                
             </div>
             <div class="col-3">
                 <h4>Kontaktujte nás</h4>

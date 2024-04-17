@@ -1,51 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/login.css">
-</head>
+<?php
+    require_once 'class/session.php';
+    require_once 'includes/head.php';
+    
+?>
+
 <body>
-    <?php include('header.php') ?>
+    <?php require_once('includes/header.php') ?>
 
     <main>
-        <section class="container">
+        <section class="container-login">
             <div class="row">
+                
                 <div class="col-md-6">
-                    <h1>Vytvor si účet</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore at corporis alias optio veniam! Accusantium amet sed perferendis nobis quaerat nulla sapiente asperiores. Esse quasi laudantium ullam debitis optio officia?</p>
-                    <a href="signup.php" class="btn btn-primary">Registrovať sa</a>
+                    <img src="img\password.png" alt="" class="img-fluid">
+                    <!-- <a href="https://www.flaticon.com/free-icons/login" title="login icons">Login icons created by Icon Pond - Flaticon</a> -->
                 </div>
-                <div class="col-md-6">
-                    <!-- Formular -->
-                    <h1>Už mám účet</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore at corporis alias optio veniam! Accusantium amet sed perferendis nobis quaerat nulla sapiente asperiores. Esse quasi laudantium ullam debitis optio officia?</p>
-                    <form action = "includes/login_inc.php">
+
+                <div class="col-md-6 ">
+                    
+                    <h1>Prihlásiť sa</h1>
+                    
+                    <form action = "class/login.php" method = "post">
+                        <div class="mb-3">
+                            
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="username"class="form-control" id="name" placeholder="Použivateľské meno">
+                            </div>
+                        </div>
                         
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            
                             <div class="input-icon">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" class="form-control" id="email" placeholder="" required>
+                                <i class="fa fa-lock"></i>
+                                <input type="password" name="pwd_1" class="form-control" id="pwd_1" placeholder="Heslo" >
                             </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            
+                                <button type="submit" class="btn btn-primary ">Registrovať sa</button>
+                            
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label">Heslo</label>
-                            <div class="input-icon">
-                                <i class=""></i>
-                                <input type="password" class="form-control" id="password" placeholder="" required>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary ">Prihlasiť sa</button>
-                        </div>
-                        
+                             <a href="signup.php" class="text-center">Zaregistrovať sa</a>
                     </form>
+
                 </div>
             </div>
         </section>
@@ -56,7 +57,7 @@
 
 
 
-    <?php include('footer.php') ?>
+    <?php include('includes/footer.php') ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
