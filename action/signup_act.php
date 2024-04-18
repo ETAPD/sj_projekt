@@ -8,9 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
 }
 
-$errors = $_SESSION['errors_signup'];
-unset($_SESSION['errors_signup']);
+
 
 if (isset($_SESSION["errors_signup"])) {
 
+    $errors = $_SESSION['errors_signup'];
+    unset($_SESSION['errors_signup']);
 }
