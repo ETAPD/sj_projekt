@@ -1,7 +1,9 @@
 <?php
-    require_once 'class/session.php';
+    require_once 'class/session_oop.php';
+    require_once 'action/session_act.php';
     require_once 'includes/head.php';
-    
+    require_once 'class/login_oop.php';
+    require_once 'action/login_act.php';
 ?>
 
 <body>
@@ -19,8 +21,8 @@
                 <div class="col-md-6 ">
                     
                     <h1>Prihlásiť sa</h1>
-                    
-                    <form action = "class/login.php" method = "post">
+                    <span class=""><span class=""><?php if (isset($errors['loginError'])) echo $errors['loginError']; ?></span>
+                    <form  method = "post">
                         <div class="mb-3">
                             
                             <div class="input-icon">
@@ -33,13 +35,13 @@
                             
                             <div class="input-icon">
                                 <i class="fa fa-lock"></i>
-                                <input type="password" name="pwd_1" class="form-control" id="pwd_1" placeholder="Heslo" >
+                                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Heslo" >
                             </div>
                         </div>
                         
                         <div class="mb-3">
                             
-                                <button type="submit" class="btn btn-primary ">Registrovať sa</button>
+                                <button type="submit" class="btn btn-primary ">Prihlásiť sa</button>
                             
                         </div>
 
