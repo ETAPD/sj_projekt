@@ -26,9 +26,18 @@
                     </li>
                 </ul>
             </div>
-            <div class="me-2">
-                <a href="login.php" class="btn btn-primary">Prihlásiť sa</a>
-            </div>
+
+            <?php if(isset($_SESSION["user_id"])){ ?>
+
+                <div class="me-2">
+                    <a href="index.php?logout=true" class="btn btn-primary">Odhlásiť sa</a>
+                </div>
+            <?php } else { ?>
+                <div class="me-2">
+                    <a href="login.php" class="btn btn-primary">Prihlásiť sa</a>
+                </div>
+            <?php } ?>
+            
             <div class="justify-content-end me-3">
                 
                 <form class="d-flex ">

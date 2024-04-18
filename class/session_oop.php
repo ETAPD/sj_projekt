@@ -1,4 +1,5 @@
 <?php
+
 class Session {
 
     private $interval = 60 * 30;
@@ -47,9 +48,6 @@ class Session {
                 
             }
         }
-
-        
-
     }
 
     private function guest_session() {
@@ -65,6 +63,16 @@ class Session {
         $user_id = $_SESSION["user_id"];
         session_id(session_create_id() . "_" . $user_id);
         $_SESSION["regeneration_time"] = time();
+
+    }
+
+    public function logout() {
+
+        session_unset();
+        session_destroy();
+        session_write_close();
+        setcookie(session_name(), "", 0, "/");
+        $this->guest_session();
 
     }
 }

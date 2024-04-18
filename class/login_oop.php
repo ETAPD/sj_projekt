@@ -112,8 +112,8 @@ class Login extends Database{
     private function session(string $username) {
 
         $user = $this->get_user($username);
-        session_id(session_create_id() . "_" . $user["id"]);
-        $_SESSION["user_id"] = $user["id"];
+        session_id(session_create_id() . "_" . $user["user_id"]);
+        $_SESSION["user_id"] = $user["user_id"];
         $_SESSION["username"] = htmlspecialchars($user["username"]);
         $_SESSION["regeneration_time"] = time();
         
