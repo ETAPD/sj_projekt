@@ -37,11 +37,8 @@ class Signup extends Database{
                 
                 if ($pwd_1 === $pwd_2){
                     $pwd = $pwd_1;
-                } else{
-                    echo "Heslá sa nezhodujú";
-                    $this->disconnect();
-                    die();
-                    
+                } else {
+                    $errors["pwd_not_match"] = True;
                 }
 
                 
@@ -154,9 +151,11 @@ class Signup extends Database{
         if ($errors["email_used"] === True) {      
             $error['emailError'] = "Email je už použitý";
         }
-        $_SESSION['errors_signup'] = $error;
-
+        if ($errors["pwd_not_match"] === True) {
+            $error['pwdError'] = "Heslá sa nezhodujú";
+        }
         
+        $_SESSION['errors_signup'] = $error;
     }
 
     private function signup_input() {

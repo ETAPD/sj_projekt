@@ -1,11 +1,10 @@
 <?php
-    require_once 'class/session.php';
+
+    require_once 'class/session_oop.php';
+    require_once 'action/session_act.php';
     require_once 'includes/head.php';
     require_once 'class/signup_oop.php';
     require_once 'action/signup_act.php';
-
-
-    
     
 ?>
 
@@ -50,6 +49,7 @@
                             <div class="input-icon">
                                 <i class="fa fa-lock"></i>
                                 <input type="password" name="pwd_1" class="form-control" id="pwd_1" placeholder="Heslo" >
+                                <span class=""><span class=""><?php if (isset($errors['pwdError'])) echo $errors['emailError']; ?></span>
                                 <span class=""></span>
                             </div>
                         </div>
@@ -58,6 +58,7 @@
                             <div class="input-icon">
                                 <i class="fa fa-lock"></i>
                                 <input type="password" name="pwd_2" class="form-control" id="pwd_2" placeholder="Znovu heslo" >
+                                <span class=""><span class=""><?php if (isset($errors['pwdError'])) echo $errors['emailError']; ?></span>
                                 
                             </div>
                         </div>
