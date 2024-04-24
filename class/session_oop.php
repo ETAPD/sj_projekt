@@ -2,7 +2,7 @@
 
 class Session {
 
-    private $interval = 60 * 30;
+    private $interval = 60 * 60 * 3;
 
     public function __construct() {
         
@@ -10,7 +10,8 @@ class Session {
         ini_set("session.use_strict_mode", 1);
 
         session_set_cookie_params([
-            "lifetime" => 60 * 30,
+            
+            "lifetime" => $this->interval,
             "domain" => "localhost",
             "path" => "/",
             "secure" => true,
