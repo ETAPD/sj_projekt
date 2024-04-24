@@ -14,7 +14,7 @@
             <div class="row">
                 
                 <div class="col-md-6">
-                    <img src="img\password.png" alt="" class="img-fluid">
+                    <img src="media/img/password.png" alt="" class="img-fluid">
                     <!-- <a href="https://www.flaticon.com/free-icons/login" title="login icons">Login icons created by Icon Pond - Flaticon</a> -->
                 </div>
 
