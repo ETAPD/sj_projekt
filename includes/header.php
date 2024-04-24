@@ -24,6 +24,13 @@
                     <li class="nav-item <?php if($currentFile == 'about.php') { echo 'active'; } ?>">
                         <a class="nav-link ps-3 " href="about.php">O-nás</a>
                     </li>
+                    <?php if(isset($_SESSION["user_id"])){ ?>
+
+                    <li class="nav-item <?php if($currentFile == 'manage_post.php') { echo 'active'; } ?>">
+                        <a class="nav-link ps-3 " href="manage_post.php">Príspevky</a>
+                    </li>
+
+                    <?php }?>
                 </ul>
             </div>
 
