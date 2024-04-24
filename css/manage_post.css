@@ -1,0 +1,76 @@
+main {
+    margin-top: 10%; 
+}
+.container-manage-post{
+    box-sizing: border-box;
+    width: 85%;
+    padding: 30px; 
+    border-radius: 25px;
+    transition: transform 0.5s ease; 
+    margin: auto;
+    background-color: #a6a6a6;
+}
+
+.container-edit{
+    box-sizing: border-box;
+    width: 75%;
+    padding: 30px; 
+    border-radius: 25px;
+    transition: transform 0.5s ease; 
+    margin: auto;
+    background-color: #a6a6a6;
+}
+
+.container-create{
+    box-sizing: border-box;
+    width: 75%;
+    padding: 30px; 
+    border-radius: 25px;
+    transition: transform 0.5s ease; 
+    margin: auto;
+    background-color: #a6a6a6;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Change this to separate */
+    border-spacing: 0; /* Add this */
+    margin: 20px 0;
+    background-color: #a6a6a6; 
+    border-radius: 10px; /* This rounds the corners */
+    overflow: hidden; /* Add this to make sure the border radius applies to all parts of the table */
+}
+
+th, td {
+    border: none; 
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #FF4E00;
+    color: rgb(255, 255, 255);
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF4E00;
+}
+textarea, input {
+    border-radius: 15px;
+    border:solid 0px;
+}
+
+
+
+
+
+
