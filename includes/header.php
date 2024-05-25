@@ -5,54 +5,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">-->
 <header>
-    <nav class="navbar navbar-expand-lg fixed-top container d-flex">
-            
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <?php $currentFile = basename($_SERVER['PHP_SELF']); ?>
+<nav class="navbar navbar-expand-lg fixed-top container-fluid d-flex justify-content-center mx-auto">
+        <?php $currentFile = basename($_SERVER['PHP_SELF']); ?>
 
-            <div class="collapse navbar-collapse middle justify-content-start" id="navbarNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item <?php if($currentFile == 'index.php') { echo 'active'; } ?>">
-                        <a class="nav-link ps-3" href="index.php">Domov</a>
-                    </li>
-                    <li class="nav-item <?php if($currentFile == 'contact.php') { echo 'active'; } ?>">
-                        <a class="nav-link ps-3" href="contact.php">Kontakt</a>
-                    </li>
-                    <li class="nav-item <?php if($currentFile == 'about.php') { echo 'active'; } ?>">
-                        <a class="nav-link ps-3 " href="about.php">O-nás</a>
-                    </li>
-                    <?php if(isset($_SESSION["user_id"])){ ?>
+        <ul class="navbar-nav ">
+            <li class="nav-item <?php if($currentFile == 'index.php') { echo 'active'; } ?>">
+                <a class="nav-link ps-3" href="index.php">Domov</a>
+            </li>
 
-                    <li class="nav-item <?php if($currentFile == 'manage_post.php') { echo 'active'; } ?>">
-                        <a class="nav-link ps-3 " href="manage_post.php">Príspevky</a>
-                    </li>
+            <li class="nav-item me-5 <?php if($currentFile == 'contact.php') { echo 'active'; } ?>"> 
+                <a class="nav-link ps-3" href="contact.php">Kontakt</a>
+            </li>
 
-                    <?php }?>
-                </ul>
-            </div>
+            <li class="nav-item <?php if($currentFile == 'about.php') { echo 'active'; } ?>">
+                <a class="nav-link ps-3 " href="about.php">O-nás</a>
+            </li>
+           
+            <li class="nav-item  <?php if($currentFile == 'manage_post.php') { echo 'active'; } ?>">
+                <a class="nav-link ps-3 " href="<?php echo isset($_SESSION['username']) ? 'manage_post.php' : 'login.php'; ?>">Príspevky</a>
+            </li>
 
-            <?php if(isset($_SESSION["user_id"])){ ?>
-
-                <div class="me-2">
-                    <a href="index.php?logout=true" class="btn btn-primary">Odhlásiť sa</a>
-                </div>
-            <?php } else { ?>
-                <div class="me-2">
-                    <a href="login.php" class="btn btn-primary">Prihlásiť sa</a>
-                </div>
-            <?php } ?>
-            
-            <div class="justify-content-end me-3">
+        </ul>
                 
-                <form class="d-flex ">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-    </nav> 
+        <?php if ($currentFile == 'index.php'): ?>
+            <form class="d-flex justify-content-center mx-auto">
+                <input class="search" type="text" id='search' placeholder="Ako hrať...." aria-label="Search">
+            </form>
+        <?php endif; ?>
+
+        
+        
+        
+    </nav>
     
 
 </header>

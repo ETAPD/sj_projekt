@@ -3,8 +3,7 @@
 nav {
     
     font-family: "Barlow Condensed", sans-serif;
-    margin-top: 1%;
-    background-color: rgba(18, 16, 16, 0.26) !important;
+    background-color: rgba(29, 28, 25, 0.521) !important;
     backdrop-filter: blur(10px) !important;
     top: 0;
     z-index: 1000;
@@ -12,7 +11,7 @@ nav {
     -webkit-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
     -moz-box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
     box-shadow: 6px 15px 40px 0px rgba(0,0,0,0.38);
-    border-radius: 25px;
+    width: 100%!important;
     backdrop-filter: blur(10px) !important;
     font-weight: bold;
     
@@ -51,18 +50,59 @@ nav button:hover{
 header img{
     width: 100% !important;
     
-    
-    
 }
 .middle{
     justify-content: center;
 }
 
-.image-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 5%;
+.image-container img {
+    object-fit: cover;
+    object-position: center;
+    width: 95%;
+    height: 450px;
+    margin-top: 2%;
+    
 }
 
+.search{
+    border-radius: 35px;
+    height: 38px;
+    width: 40px;
+    background: linear-gradient(to right,#FFBE0B, #F42B03);
+    border: none; 
+    box-shadow: none;
+    color: white;
+    padding-left: 9px;
+    transition: 0.5s;
+    cursor: pointer;
+}
 
+.search:focus {
+    outline: none;
+    border: none; 
+    box-shadow: none; 
+    width: 420px;
+    transition: 0.5s;
+    cursor: unset;
+    padding-left: 15px;
+}
+
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.719); 
+}
+
+form.d-flex {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.placeholder-image {
+    position: absolute;
+    height: auto; 
+    width: 23px!important; 
+    left: 8px; 
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
