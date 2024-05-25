@@ -7,11 +7,28 @@
 <body>
     <?php require_once('includes/header.php') ?>
 
+    <div class="image-container">
+        <img src="media/img/gamer_font.jpg" alt="" class="img-fluid">
+    </div>
+
     <div class="container">
-        <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quam nemo optio velit! Molestiae temporibus atque sed, voluptates culpa possimus dolorum praesentium accusamus. Quae, eveniet molestiae dolorem atque eum ut.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ea reprehenderit totam non dignissimos facere omnis iste! Ipsum omnis et quae odit cum reprehenderit, placeat temporibus debitis? Architecto, doloremque amet.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, eos. Similique error quaerat accusantium iusto maiores magnam esse debitis, molestiae non ex quasi ducimus nam accusamus deleniti voluptatibus laboriosam quia!</p>
+    
+    
+    <h1>Vitajte na našom fóre venovanom hráčom a herným nadšencom!</h1>
+    <p>Sme komunita ľudí, ktorí milujú hry a veria, že spoločné zdieľanie skúseností, tipov a stratégií môže obohatiť herný zážitok každého z nás.</p>
+    
+    <h2>Na našom fóre nájdete priestor na:</h2>
+    <ul>
+        <li>Diskusie o hrách: Podeľte sa o svoje názory, recenzie a odporúčania.</li>
+        <li>Stratégie a tipy: Naučte sa nové techniky a zlepšite svoje herné zručnosti.</li>
+        <li>Podpora: Pomôžte si navzájom s technickými problémami a otázkami ohľadom hier.</li>
+        <li>Novinky a aktualizácie: Buďte informovaní o najnovších herných trendoch a udalostiach.</li>
+    </ul>
+    
+    <p>Našou misiou je vytvoriť priateľské a podporujúce prostredie, kde sa každý hráč môže cítiť vítaný a môže prispieť svojimi poznatkami. Nezáleží na tom, či ste začiatočník alebo skúsený hráč, u nás si každý nájde svoje miesto.</p>
+    
+    <h2>Pridajte sa k nám a staňte sa súčasťou našej rastúcej komunity. Spolu môžeme zlepšiť náš herný svet a zažiť množstvo zábavy!</h2>
+    
     </div>
 
 
