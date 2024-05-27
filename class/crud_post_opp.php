@@ -6,32 +6,37 @@ class Post extends Database {
     
     private $upload_folder = 'media/uploads/';
 
-    function create_post(string $post_title, string $post_content, int $post_category, int $stat_id) {
+    function create_post(string $post_title, string $post_content, int $post_category) {
         
-        $query = "INSERT INTO posts (user_id, title, content, category_id, stat_id) VALUES (:user_id ,:post_title, :post_content, :post_category, :stat_id);";
+        $title_img = "media/img/default_img.jpg";
+        
+        $query = "INSERT INTO posts (user_id, title, content, category_id, title_img) VALUES (:user_id ,:post_title, :post_content, :post_category, :title_img);";
         $stmt = $this->pdo->prepare($query);
 
         $stmt->bindParam(":user_id", $_SESSION['user_id']);
         $stmt->bindParam(":post_title", $post_title);
         $stmt->bindParam(":post_content", $post_content);
         $stmt->bindParam(":post_category", $post_category);
-        $stmt->bindParam(":stat_id", $stat_id);
+        $stmt->bindParam(":title_img", $title_img);
+
         
         $stmt->execute();  
-        $this->disconnect();
+        $post_id = $this->pdo->lastInsertId();
+        return $post_id;
 
     }
     
     
     function get_all_post() {
 
-        $query = "SELECT * FROM posts WHERE user_id = :user_id;";
+        $query = "SELECT * FROM posts p JOIN stats s ON p.post_id = s.post_id WHERE user_id = :user_id;";
+    
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':user_id', $_SESSION['user_id']);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $this->disconnect();
+        
     }
     
     function delete_post(int $post_id) {
@@ -40,7 +45,7 @@ class Post extends Database {
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":post_id", $post_id);
         $stmt->execute();
-        $this->disconnect();
+        
     }
 
     function update_post(int $post_id, string $post_title, string $post_content,int $post_category) {
@@ -55,7 +60,7 @@ class Post extends Database {
         $stmt->bindParam(":post_id", $post_id);
         $stmt->bindParam(":last_update", $datetime);
         $stmt->execute();
-        $this->disconnect();
+        
     }
      
     function read_post(int $post_id) {
@@ -67,7 +72,7 @@ class Post extends Database {
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
-        $this->disconnect();
+        
     }
 
     function get_all_category() {
@@ -78,7 +83,6 @@ class Post extends Database {
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-        $this->disconnect();
     }
 
     function update_img(int $post_id, string $file_name, string $file_tmp_name, int $file_size, int $file_error, string $file_type) {
@@ -95,13 +99,16 @@ class Post extends Database {
                     $file_destination = $this->upload_folder.$file_name_new;
                     move_uploaded_file($file_tmp_name, $file_destination);
                 } else {    
-                    echo "Your file is too big!";
+                    echo "Váš súbor je príliš veľký!";
+                    die();
                 } 
             }else {
-                echo "There was an error uploading your file!";
+                echo "Pri nahrávaní súboru sa vyskytla chyba!";
+                die();
             }
         } else {
-            echo "You cannot upload files of this type!";
+            echo "Nemôžete nahrávať súbory tohto typu!";
+            die();
         }
         
         $query = "UPDATE posts SET title_img = :title_img WHERE post_id = :post_id;";
@@ -110,17 +117,17 @@ class Post extends Database {
         $stmt->bindParam(":title_img",  $file_destination);
         $stmt->bindParam(":post_id", $post_id);
         $stmt->execute();
-        $this->disconnect();
+        
     }
     
     function get_most_views() {
 
-        $query = "SELECT posts.title, posts.title_img, posts.content, posts.post_id FROM posts JOIN stats ON posts.stat_id = stats.stat_id ORDER BY views DESC LIMIT 9;";
+        $query = "SELECT posts.title, posts.title_img, posts.content, posts.post_id FROM posts JOIN stats ON posts.post_id = stats.post_id ORDER BY views DESC LIMIT 9;";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
-        $this->disconnect();
+        
 
     }            
 
@@ -131,7 +138,7 @@ class Post extends Database {
         $stmt->execute([":searchQuery" => "%$searchQuery%"]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-        $this->disconnect();
+        
     }
 
 
