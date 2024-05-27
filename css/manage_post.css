@@ -1,5 +1,6 @@
 main {
     margin-top: 10%; 
+    margin-bottom: 20%;
 }
 .container-manage-post{
     box-sizing: border-box;
@@ -134,6 +135,7 @@ input {
     justify-content: space-between; 
     align-items: center;
 }
+
 
 
 
