@@ -110,7 +110,7 @@
                             <td><?php echo $row['last_update']; ?></td>
                             <td><?php echo $row['views']; ?></td>
                             <td>
-                                <a href='#' class='edit-link' data-id='<?php echo $row['post_id']; ?>' data-row='<?php echo json_encode($row); ?>'>Upraviť</a>
+                                <a href='#' class='edit-link' data-id='<?php echo $row['post_id']; ?>' data-row='<?php echo htmlspecialchars(json_encode($row), ENT_QUOTES, 'UTF-8'); ?>'>Upraviť</a>
                                 /<a href='manage_post.php?delete_id=<?php echo $row['post_id']; ?>'>Vymazať</a>
                             </td>
                         </tr>
