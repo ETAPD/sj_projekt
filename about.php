@@ -1,7 +1,6 @@
 <?php
     require_once 'class/session_oop.php';
     require_once 'includes/head.php';
-    require_once 'action/session_act.php';
 ?>
 
 <body>
