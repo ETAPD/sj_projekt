@@ -94,7 +94,7 @@ class Post extends Database {
 
         if (in_array($file_actual_ext, $allowed)) {
             if ($file_error === 0) {
-                if ($file_size < 500000) {
+                if ($file_size < 5000000) {
                     $file_name_new = uniqid('', true).".".$file_actual_ext;
                     $file_destination = $this->upload_folder.$file_name_new;
                     move_uploaded_file($file_tmp_name, $file_destination);
