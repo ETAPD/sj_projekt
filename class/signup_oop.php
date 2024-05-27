@@ -55,7 +55,7 @@ class Signup extends Database{
                 }else{
 
                     $this->create_user($username, $email, $pwd);
-                    header("Location: signup.php?signup=success");
+                    header("Location: login.php");
                     $this->disconnect();
                     $stmt = null;
                     die();
@@ -132,6 +132,7 @@ class Signup extends Database{
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":pwd", $hashed_pwd);
         $stmt->execute();  
+        
     }
 
     private function invalid_input() {
