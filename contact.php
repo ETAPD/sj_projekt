@@ -15,7 +15,7 @@
       
 
     <div class="container">
-        <h2>Kontakt</h2>
+        <h1>Kontakt</h1>
         <p>Máte otázky, návrhy alebo potrebujete pomoc? Sme tu pre vás a radi vám pomôžeme! Naša komunita herných nadšencov je vždy pripravená odpovedať na vaše otázky a poskytnúť potrebnú podporu. Či už máte technický problém, návrh na zlepšenie, alebo len chcete zdieľať svoje herné zážitky, neváhajte nás kontaktovať.</p>
 
         <div class="contact-info">
