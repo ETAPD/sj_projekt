@@ -39,13 +39,13 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.search').on('focus', function(){
         $(this).attr('placeholder', 'Ako hrať....');
-        $(this).prev('.placeholder-image').remove(); // remove the image
+        $(this).prev('.placeholder-image').remove(); 
     });
 
     $('.search').on('blur', function(){
         if ($(this).val() === '') {
             $(this).attr('placeholder', '');
-            $(this).before('<img src="media/img/lens.png" class="placeholder-image" />'); // add the image
+            $(this).before('<img src="media/img/lens.png" class="placeholder-image" />'); 
         }
     });
 
