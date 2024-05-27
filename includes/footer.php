@@ -6,8 +6,9 @@
         <div class="row d-flex justify-content-center">
             <div class="col-3">
                 <h4>O Nás:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quam nemo optio velit! Molestiae temporibus atque sed, voluptates culpa possimus dolorum praesentium accusamus. Quae, eveniet molestiae dolorem atque eum ut.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ea reprehenderit totam non dignissimos facere omnis iste! Ipsum omnis et quae odit cum reprehenderit, placeat temporibus debitis? Architecto, doloremque amet.</p>
+                <p>Sme komunita herných nadšencov, ktorí veria v silu zdieľania skúseností a stratégií. Na našom fóre nájdete diskusie, 
+                tipy a podporu, ktoré obohatia váš herný zážitok. Pridajte sa k nám a buďte súčasťou priateľského prostredia, kde každý hráč je vítaný.</p>
+               
                 
             </div>
             <div class="col-3">
@@ -25,9 +26,9 @@
                 <h4>Rýchle odkazy</h4>
                 <ul>
                     <li><a href="index.php">Domov</a></li>
-                    
                     <li><a href="contact.php">Kontakt</a></li>
                     <li><a href="about.php">O-nás</a></li>
+                    <li><a href="<?php echo isset($_SESSION['username']) ? 'manage_post.php' : 'login.php'; ?>">Príspevky</a></li>
                 </ul>
             </div>
             
