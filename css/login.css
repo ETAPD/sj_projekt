@@ -64,3 +64,17 @@ main form button, .input-icon {
     margin-top: 5%;
     /* rest of your styles */
 }
+.input-invalid {
+    border: 2px solid red;
+    outline: none;
+    box-shadow: 0 0 10px red;
+}
+.error-message {
+    color: rgba(255, 56, 56, 0.897);
+    border: 2px solid #EB9695;
+    background-color: #FFEBE8;
+    padding: 10px;
+    border-radius: 5px;
+    width: 75% !important;
+    display: inline-block;
+}
