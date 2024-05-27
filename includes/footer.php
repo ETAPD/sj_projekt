@@ -1,6 +1,4 @@
-<!--<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
 
 <footer class="container-fluid bg-dark text-white  ">
         <div class="row d-flex justify-content-center">
