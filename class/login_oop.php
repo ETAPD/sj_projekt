@@ -27,8 +27,7 @@ class Login extends Database{
                 
                 if ($errors) {
 
-                    $this->errors_login = $errors;
-                    $this->invalid_input();
+                    $_SESSION['errors_login'] = True;
                     header("Location: login.php");
                     die();
                 }
@@ -56,6 +55,7 @@ class Login extends Database{
     
             return false;
         }
+        
     }
 
     private function get_user(string $username) {
@@ -87,36 +87,12 @@ class Login extends Database{
         }
     }
 
-    private function invalid_input() {
-
-        $errors = $this->errors_login;
-        $error = [];
-        
-        if ($errors["empty_input"] === True) {
-            $error['emptyError'] = "Prázdne pole";
-        }
-        if ($errors["login_failed"] === True) {
-            $error['loginError'] = "Nesprávne prihlasovacie údaje";
-        }
-        /*if ($errors["username_taken"] === True) {    
-            $error['usernameError'] = "Používateľské meno je už obsadené";
-        }
-        if ($errors["email_used"] === True) {      
-            $error['emailError'] = "Email je už použitý";
-        }*/
-        $_SESSION['errors_login'] = $error;
-        header("Location: index.php");
-        
-    }
-
     private function session(string $username) {
 
         $user = $this->get_user($username);
-        session_id(session_create_id() . "_" . $user["user_id"]);
         $_SESSION["user_id"] = $user["user_id"];
         $_SESSION["username"] = htmlspecialchars($user["username"]);
-        $_SESSION["regeneration_time"] = time();
-        
-        
+        $_SESSION["user"] = $user;
+        echo $_SESSION["username"];
     }
 }
