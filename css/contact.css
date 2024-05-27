@@ -1,3 +1,39 @@
-.container.contact {
-    width: 500px; 
+h2 {
+    text-align: center;
+    color: #333;
+}
+main {
+    margin-top: 14%;
+}
+.container {
+    width: 75%;
+}
+p {
+    margin-bottom: 20px;
+}
+.contact-info {
+    font-size: 18px;
+}
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.contact-info a:hover {
+    color: #FF4E00 ;
+    text-decoration: underline;
+}
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+.social-links li {
+    display: inline;
+    margin-right: 10px;
+}
+.social-links a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.social-links a:hover {
+    text-decoration: underline;
 }

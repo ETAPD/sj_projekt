@@ -3,12 +3,12 @@ main {
 }
 .container-manage-post{
     box-sizing: border-box;
-    width: 85%;
+    width: 70%;
     padding: 30px; 
     border-radius: 25px;
     transition: transform 0.5s ease; 
     margin: auto;
-    background-color: #a6a6a6;
+    
 }
 
 .container-edit{
@@ -33,12 +33,12 @@ main {
 
 table {
     width: 100%;
-    border-collapse: separate; /* Change this to separate */
-    border-spacing: 0; /* Add this */
+    border-collapse: separate; 
+    border-spacing: 0; 
     margin: 20px 0;
     background-color: #a6a6a6; 
-    border-radius: 10px; /* This rounds the corners */
-    overflow: hidden; /* Add this to make sure the border radius applies to all parts of the table */
+    border-radius: 10px; 
+    overflow: hidden; 
 }
 
 th, td {
@@ -56,20 +56,84 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-table a {
+.container-manage-post a {
     color: #333;
     text-decoration: none;
 }
 
-a:hover {
+.container-manage-post a:hover {
     color: #FF4E00;
 }
+
 textarea, input {
     border-radius: 15px;
     border:solid 0px;
 }
 
+input {
+    width: 100%;
+    height: 40px;
+}
 
+.mb-3 {
+    
+    width: 100%!important;
+}
+
+.left-button {
+    float: left!important;
+}
+
+.right-button {
+    float: right;
+}
+
+.left-button, .right-button {
+    width: 90px !important;
+    height: 40px;
+    border-radius: 15px;
+    border:solid 0px;
+    background-color: #FF4E00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.center-form {
+    
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.center-form form {
+    
+    width: 87% ;
+}
+
+.button:hover {
+    color: #FF4E00 !important;
+    text-decoration: underline;
+}
+
+.button{
+    text-decoration: none;
+    font-size: 20px !important;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background-color: white;
+}
+
+.table-had{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
 
 
 
