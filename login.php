@@ -1,6 +1,5 @@
 <?php
     require_once 'class/session_oop.php';
-    require_once 'action/session_act.php';
     require_once 'includes/head.php';
     require_once 'class/login_oop.php';
     require_once 'action/login_act.php';
@@ -21,13 +20,20 @@
                 <div class="col-md-6 ">
                     
                     <h1>Prihlásiť sa</h1>
-                    <span class=""><span class=""><?php if (isset($errors['loginError'])) echo $errors['loginError']; ?></span>
+                    
+                    
                     <form  method = "post">
+                    <?php if (isset($errors)): ?>
+                        <div class="mb-3">
+                            <span class="error-message">Nesprávne zadané údaje</span>
+                        </div>
+                    <?php endif; ?>
+                        
                         <div class="mb-3">
                             
                             <div class="input-icon">
                                 <i class="fas fa-user"></i>
-                                <input type="text" name="username"class="form-control" id="name" placeholder="Použivateľské meno">
+                                <input type="text"  name="username"class="form-control <?php if (isset($errors)) echo 'input-invalid' ; ?>" id="name" placeholder="Použivateľské meno">
                             </div>
                         </div>
                         
@@ -35,18 +41,20 @@
                             
                             <div class="input-icon">
                                 <i class="fa fa-lock"></i>
-                                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Heslo" >
+                                <input type="password" name="pwd" class="form-control <?php if (isset($errors)) echo 'input-invalid' ; ?>" id="pwd" placeholder="Heslo" >
                             </div>
                         </div>
                         
                         <div class="mb-3">
-                            
+
                                 <button type="submit" class="btn btn-primary ">Prihlásiť sa</button>
-                            
+                                
                         </div>
 
                         <div class="mb-3">
+                            Ešte nemáte účet?
                              <a href="signup.php" class="text-center">Zaregistrovať sa</a>
+                        </div>
                     </form>
 
                 </div>
