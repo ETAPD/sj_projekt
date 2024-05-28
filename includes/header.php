@@ -21,7 +21,7 @@
                     </li>
                     
                     <li class="nav-item  <?php if($currentFile == 'manage_post.php') { echo 'active'; } ?>">
-                        <a class="nav-link ps-3 " href="<?php echo isset($_SESSION['username']) ? 'manage_post.php' : 'login.php'; ?>">Príspevky</a>
+                        <a class="nav-link ps-3 " href="manage_post.php">Príspevky</a>
                     </li>
                 </ul>
             </div>
