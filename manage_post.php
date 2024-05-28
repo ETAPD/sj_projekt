@@ -63,11 +63,11 @@ if (!isset($_SESSION['user'])) {
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="post_title" class="form-label">Názov</label>
-                                <input type="text" name="post_title" class="form-control">
+                                <input type="text" name="post_title" class="form-control" require>
                             </div>
                             <div class="mb-3">
                                 <label for="content" class="form-label">Obsah</label>
-                                <textarea name="create-content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                                <textarea name="create-content" id="content" cols="30" rows="10" class="form-control" require></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="category" class="form-label">Kategórie</label>
