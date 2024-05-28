@@ -159,10 +159,6 @@ class Signup extends Database{
         $_SESSION['errors_signup'] = $error;
     }
 
-    private function signup_input() {
-
-
-    }
 
 }
 

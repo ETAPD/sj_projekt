@@ -1,37 +1,48 @@
-h2 {
+main {
+    margin-top: 10%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgb(211, 211, 211);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+h1 {
     text-align: center;
     color: #333;
 }
-main {
-    margin-top: 14%;
-}
-.container {
-    width: 75%;
-}
-p {
-    margin-bottom: 20px;
+main p {
+    margin: 10px 0;
+    color: #666;
 }
 .contact-info {
-    font-size: 18px;
+    margin-top: 20px;
+}
+.contact-info p {
+    margin: 5px 0;
 }
 .contact-info a {
-    color: #0066cc;
+    color: #007BFF;
     text-decoration: none;
 }
 .contact-info a:hover {
-    color: #FF4E00 ;
     text-decoration: underline;
+    color:#FF4E00;
 }
 .social-links {
     list-style: none;
     padding: 0;
+    margin: 10px 0;
 }
 .social-links li {
     display: inline;
     margin-right: 10px;
 }
 .social-links a {
-    color: #0066cc;
+    color: #007BFF;
     text-decoration: none;
 }
 .social-links a:hover {
