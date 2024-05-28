@@ -8,9 +8,6 @@
 
 <body>
     <?php require_once('includes/header.php') ?>
-
-    
-
     <main>
         <?php 
             $stat = new Stat();
