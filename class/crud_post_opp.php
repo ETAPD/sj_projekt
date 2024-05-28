@@ -41,6 +41,11 @@ class Post extends Database {
     
     function delete_post(int $post_id) {
         
+        $post = $this->read_post($post_id);
+        $image_path = $post['title_img'];
+        if ($image_path != "media/img/default_img.jpg") {
+            unlink($image_path);
+        }
         $query = "DELETE FROM posts WHERE post_id = :post_id;";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":post_id", $post_id);
