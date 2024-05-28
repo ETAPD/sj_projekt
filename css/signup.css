@@ -1,6 +1,6 @@
 
 main {
-    margin-top: 10%; /* Adjust the value as needed */
+    margin-top: 10%; 
 }
 .container-signup{
     box-sizing: border-box;
@@ -62,7 +62,7 @@ main form button:hover{
 main form button, .input-icon {
     display: block;
     margin: auto;
-    /* rest of your styles */
+    
 }
 .error-message {
     color: rgba(255, 56, 56, 0.897);

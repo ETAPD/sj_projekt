@@ -62,7 +62,7 @@ main form button, .input-icon {
     display: block;
     margin: auto;
     margin-top: 5%;
-    /* rest of your styles */
+    
 }
 .input-invalid {
     border: 2px solid red;
